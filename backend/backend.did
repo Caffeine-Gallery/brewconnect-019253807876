@@ -1,0 +1,18 @@
+type ChatMessage = 
+ record {
+   message: text;
+   timestamp: int;
+   username: text;
+ };
+service : {
+  addChatMessage: (text, text) -> ();
+  getBestCoffeeRecommendations: () -> (vec record {
+                                             text;
+                                             text;
+                                           }) query;
+  getChatMessages: () -> (vec ChatMessage) query;
+  getCoffeeBrewingResources: () -> (vec record {
+                                          text;
+                                          text;
+                                        }) query;
+}
